@@ -1,0 +1,44 @@
+# Dependências
+node_modules/
+
+# Build / output
+dist/
+build/
+server.js
+dist-server.mjs
+dist-server.*
+*.tsbuildinfo
+
+# Screenshots temporários (mantém docs/screenshots versionado)
+.playwright/
+
+# Testes e cobertura
+coverage/
+
+# Variáveis de ambiente (mantém .env.example)
+.env*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Vite / TypeScript
+.vite/
+*.tsbuildinfo
+
+# SO
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Skills locais (instruções do agente, não versionar)
+Skills/
+
+# Editores (config local)
+.idea/
+*.swp
+*.swo
