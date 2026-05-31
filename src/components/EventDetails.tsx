@@ -225,7 +225,14 @@ export function EventDetails({ event, isOpen, onClose, user, onBetPlaced, onFavo
       onBetPlaced?.();
     } catch (e) {
       console.error(e);
-      alert(e instanceof Error ? e.message : 'Erro ao apostar. Verifique o Firestore.');
+      const code = (e as { code?: string })?.code;
+      if (code === 'permission-denied') {
+        alert(
+          'Permissão negada no Firestore. Publique as regras do arquivo firestore.rules no Firebase Console (Firestore → Rules → Publicar).',
+        );
+      } else {
+        alert(e instanceof Error ? e.message : 'Erro ao apostar. Verifique o Firestore.');
+      }
     } finally {
       setIsBetting(false);
     }

@@ -104,7 +104,28 @@ VITE_FIREBASE_AUTH_DOMAIN=""
 VITE_FIREBASE_PROJECT_ID=""
 ```
 
-Firebase é opcional — o app funciona sem login.
+Firebase é opcional para navegar mercados, mas **apostas simuladas exigem Firestore configurado**.
+
+### Publicar regras do Firestore (obrigatório para apostar)
+
+Sem isso aparece *"Missing or insufficient permissions"* ao apostar.
+
+1. Abra [Firebase Console](https://console.firebase.google.com) → projeto **login-polymarkt**
+2. **Firestore Database → Rules**
+3. Cole o conteúdo de `firestore.rules` do repositório
+4. Clique em **Publicar**
+
+Ou via CLI (com [Firebase CLI](https://firebase.google.com/docs/cli) instalado):
+
+```bash
+firebase login
+firebase use login-polymarkt
+firebase deploy --only firestore:rules,firestore:indexes
+```
+
+### Domínio autorizado (login Google no Netlify)
+
+**Authentication → Settings → Authorized domains** → adicione `arena-market.netlify.app` (ou seu domínio).
 
 ## Estrutura do projeto
 
