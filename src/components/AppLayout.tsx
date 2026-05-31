@@ -1,9 +1,10 @@
 import React from 'react';
 import { User } from 'firebase/auth';
-import { TrendingUp, LogIn, Moon, LayoutGrid, User as UserIcon, Star } from 'lucide-react';
+import { LogIn, Moon, LayoutGrid, User as UserIcon, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { UserAvatar } from './UserAvatar';
+import { AppLogo } from './AppLogo';
 import { useTheme } from 'next-themes';
 import { getUserDisplayName } from '../lib/user';
 
@@ -37,15 +38,9 @@ export function AppLayout({
           <button
             type="button"
             onClick={() => onViewChange('mercados')}
-            className="flex items-center gap-2.5 shrink-0"
+            className="flex items-center gap-2.5 shrink-0 hover:opacity-90 transition-opacity"
           >
-            <div className="w-9 h-9 rounded-md bg-muted border border-border flex items-center justify-center text-primary">
-              <TrendingUp size={18} />
-            </div>
-            <div className="text-left hidden sm:block">
-              <p className="font-heading font-semibold text-[15px] leading-tight">Arena Polymarket</p>
-              <p className="text-[10px] text-muted-foreground">Copa 2026 · UCDB</p>
-            </div>
+            <AppLogo showText />
           </button>
 
           <nav className="hidden md:flex items-center gap-1 ml-auto border border-border/50 rounded-md p-0.5 bg-muted/30">

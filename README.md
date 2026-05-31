@@ -1,6 +1,13 @@
-# Arena Polymarket — Copa do Mundo 2026
+<p align="center">
+  <img src="public/logopoly.png" alt="Arena Polymarket" width="140" />
+</p>
 
-Interface em português para explorar **cotações de mercados de predição** da Copa do Mundo FIFA 2026 no [Polymarket](https://polymarket.com), com mercados simulados da UCDB, favoritos, alertas de preço e apostas com saldo virtual.
+<h1 align="center">Arena Polymarket — Copa do Mundo 2026</h1>
+
+<p align="center">
+  Interface em português para explorar <strong>cotações de mercados de predição</strong> da Copa do Mundo FIFA 2026 no
+  <a href="https://polymarket.com">Polymarket</a>, com mercados simulados da UCDB, favoritos, alertas de preço e apostas com saldo virtual.
+</p>
 
 ![Dashboard — mercados ao vivo](docs/screenshots/01-dashboard-light.png)
 

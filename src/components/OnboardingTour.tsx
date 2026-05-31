@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { AppLogo } from './AppLogo';
 
 const KEY = 'arena_onboarding_done';
 
@@ -35,6 +36,9 @@ export function OnboardingTour() {
   return (
     <Dialog open={open} onOpenChange={(v) => !v && finish()}>
       <DialogContent className="!max-w-lg !w-[92vw] rounded-md">
+        <div className="flex justify-center pt-2">
+          <AppLogo size="lg" />
+        </div>
         <DialogHeader>
           <DialogTitle>Bem-vindo à Arena Polymarket</DialogTitle>
           <DialogDescription>Tour rápido em 3 passos</DialogDescription>

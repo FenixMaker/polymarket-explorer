@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { onAuthStateChanged, User } from 'firebase/auth';
 import { auth, loginWithGoogle, logout, resolveGoogleRedirect } from './firebase';
 import { AppLayout, AppView } from './components/AppLayout';
+import { AppLogo } from './components/AppLogo';
 import Dashboard from './components/Dashboard';
 import { UserProfile } from './components/UserProfile';
 import { FavoritesPage } from './components/FavoritesPage';
@@ -77,8 +78,9 @@ export default function App() {
 
   if (!authReady) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="w-7 h-7 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-background">
+        <AppLogo size="lg" />
+        <div className="w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin" />
       </div>
     );
   }
