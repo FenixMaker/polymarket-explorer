@@ -61,6 +61,17 @@ npm run build
 npm start
 ```
 
+## Deploy no Netlify
+
+O projeto inclui `netlify.toml` com **Netlify Functions** para as rotas `/api/*` (sem isso, o site estático retorna “Falha ao buscar mercados”).
+
+1. Conecte o repositório no Netlify (o `netlify.toml` define build e redirects).
+2. Em **Environment variables**, adicione as variáveis `VITE_FIREBASE_*` (como na captura de tela).
+3. No **Firebase Console → Authentication → Authorized domains**, adicione `seu-site.netlify.app`.
+4. Faça **Trigger deploy** após push ou redeploy manual.
+
+Build usado pelo Netlify: `npm run build:netlify` → publica `dist/` + funções em `netlify/functions/`.
+
 ## APIs utilizadas
 
 | API | Base URL | Uso | Autenticação |
